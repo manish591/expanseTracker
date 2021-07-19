@@ -40,14 +40,14 @@ let amount;
     }
 
     for (let i = 0; i < currencies.length; i++) {
-      if (changeTo > currencies[i]) {
+      if (changeTo >= currencies[i]) {
         let note = Math.floor(changeTo / currencies[i]);
         changeTo = changeTo - currencies[i] * note;
         notes[i] = note;
       }
     }
 
-    
+    console.log(notes)
         for (let i = 0; i < notes.length; i++) {
             if (notes[i]) {
               console.log(`You have to pay ${notes[i]} notes of : ${currencies[i]}`)

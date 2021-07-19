@@ -9,22 +9,44 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="title">Expanse Tracker</h1>
-        <p class="description"></p>
-        <input type="text" class="amounttopay" placeholder="amount to pay">
-        <button class="next">Next</button>
-        <div class="hide">
+        <div class="minicontainer">
+            <h1 class="title">Cash Regiser Manager</h1>
+            <p class="description">Enter the bill amount and cash given by the customer and know minimum number of notes to return.</p>
+            <input type="text" class="amounttopay" placeholder="amount to pay">
+             <button class="next">Next</button>
+            <div class="hide">
             <input type="text" class="amountyougive hide" placeholder="amount you given">
             <button class="calculate">Calcuate</button>
-            <ul class="output">
-               <li class="numofnotes">You have to pay:</li>
-               <li class="numofnotes">You have to pay:</li>
-               <li class="numofnotes">You have to pay:</li>
-               <li class="numofnotes">You have to pay:</li>
-               <li class="numofnotes">You have to pay:</li>
-               <li class="numofnotes">You have to pay:</li>
-               <li class="numofnotes">You have to pay:</li>
-            </ul>
+            <p class="error"></p>
+        </div>
+        </div>
+
+        <div class="outputContainer">
+            <h1>Return Change</h1>
+            <div class="output">
+                <table>
+                    <tr>
+                    <th>No.of Notes</td>
+                    <td class="numofnotes"></td>
+                    <td class="numofnotes"></td>
+                    <td class="numofnotes"></td>
+                    <td class="numofnotes"></td>
+                    <td class="numofnotes"></td>
+                    <td class="numofnotes"></td>
+                    <td class="numofnotes"></td>
+                    </tr>
+                    <tr>
+                    <th>Note</td>
+                    <td>2000</td>
+                    <td>500</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>20</td>
+                    <td>10</td>
+                    <td>1</td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
     <script src="/expanse.js"></script>
