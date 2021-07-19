@@ -12,13 +12,15 @@
         <div class="minicontainer">
             <h1 class="title">Cash Regiser Manager</h1>
             <p class="description">Enter the bill amount and cash given by the customer and know minimum number of notes to return.</p>
-            <input type="text" class="amounttopay" placeholder="amount to pay">
+            <label for="amounttopay">Bill Amount</label>
+            <input id="amounttopay" type="text" class="amounttopay" placeholder="amount to pay">
              <button class="next">Next</button>
             <div class="hide">
-            <input type="text" class="amountyougive hide" placeholder="amount you given">
+            <label for="amountyougive">Cash Given</label>
+            <input id="amountyougive" type="text" class="amountyougive hide" placeholder="amount you given">
             <button class="calculate">Calcuate</button>
-            <p class="error"></p>
         </div>
+        <p class="error"></p>
         </div>
 
         <div class="outputContainer">
@@ -49,6 +51,16 @@
             </div>
         </div>
     </div>
+
+    <footer class="connect">
+        <h2 class="foottitle">Let's Connect</h2>
+        <span class="footspan">With manish devrani</span>
+            <ul class="footerlink">
+                    <a href="https://www.linkedin.com/in/manishdevrani77/" class="link" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/manish591" class="link" target="_blank">Github</a>
+                    <a href="https://twitter.com/manishdevrani77" class="link" target="_blank">Twitter</a>
+            </ul>
+    </footer>
     <script src="/expanse.js"></script>
 </body>
 </html>

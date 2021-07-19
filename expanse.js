@@ -5,6 +5,7 @@ let output = document.querySelector(".output");
 const nextBtn = document.querySelector(".next");
 const hide = document.querySelector(".hide");
 const numNote = document.querySelectorAll('.numofnotes');
+const error = document.querySelector('.error');
 
 let currencies = [2000, 500, 100, 50, 20, 10, 1];
 let notes = [0, 0, 0, 0, 0, 0, 0];
@@ -15,12 +16,13 @@ let amount;
     amount = amontToPay.value;
 
     if (amontToPay.value === '') {
-        console.log('enter a value first');
+        error.innerText = 'Please Enter A Value!';
         return;
     }
     amontYouGave.style.display = "block";
     nextBtn.style.display = "none";
     hide.style.display = "block";
+    error.innerText = '';
   }
 
   nextBtn.addEventListener("click", firstStep);
@@ -32,11 +34,13 @@ let amount;
     let changeTo = parseInt(totalGiven) - parseInt(amount);
 
     if (amontYouGave.value === '') {
-        return console.log('enter a value')
+      error.innerText = 'Please Enter A Value!';
+      return;
     }
 
     if (parseInt(totalGiven) < parseInt(amount)) {
-        return console.log('your amount is low than actual price')
+       error.innerText = 'Amount Given Is very Low than Bill Amount!';
+       return;
     }
 
     for (let i = 0; i < currencies.length; i++) {
@@ -59,6 +63,7 @@ let amount;
     amontYouGave.value = "";
     totalGiven = "";
     changeTo = "";
+    error.innerText = '';
   }
    
   calculateBtn.addEventListener('click', change);
