@@ -6,8 +6,9 @@ const nextBtn = document.querySelector(".next");
 const hide = document.querySelector(".hide");
 const numNote = document.querySelectorAll('.numofnotes');
 const error = document.querySelector('.error');
+const outputContainer = document.querySelector('.outputContainer');
 
-let currencies = [2000, 500, 100, 50, 20, 10, 1];
+let currencies = [2000, 500, 100, 20, 10, 5, 1];
 let notes = [0, 0, 0, 0, 0, 0, 0];
 let amount;
 
@@ -29,9 +30,10 @@ let amount;
 
 
 
-  function change() {
+  function change () {
     let totalGiven = amontYouGave.value;
     let changeTo = parseInt(totalGiven) - parseInt(amount);
+    outputContainer.classList.remove('hide');
 
     if (amontYouGave.value === '') {
       error.innerText = 'Please Enter A Value!';
@@ -58,7 +60,7 @@ let amount;
               numNote[i].innerText = `${notes[i]}`
             }
           }
-
+    
     amontToPay.value = "";
     amontYouGave.value = "";
     totalGiven = "";
