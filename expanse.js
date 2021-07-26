@@ -10,11 +10,15 @@ const outputContainer = document.querySelector('.outputContainer');
 
 let currencies = [2000, 500, 100, 20, 10, 5, 1];
 let notes = [0, 0, 0, 0, 0, 0, 0];
-let amount;
 
+
+function clearNote () {
+  for(let notes of numNote){
+    notes.innerText = "";
+ }
+}
 
   function firstStep() {
-    amount = amontToPay.value;
 
     if (amontToPay.value === '') {
         error.innerText = 'Please Enter A Value!';
@@ -31,8 +35,10 @@ let amount;
 
 
   function change () {
-    let totalGiven = amontYouGave.value;
-    let changeTo = parseInt(totalGiven) - parseInt(amount);
+    clearNote();
+    let totalBillAmount = Number(amontToPay.value);
+    let totalGiven = Number(amontYouGave.value);
+    let changeTo = Number(totalGiven) - Number(totalBillAmount);
     outputContainer.classList.remove('hide');
 
     if (amontYouGave.value === '') {
@@ -40,34 +46,29 @@ let amount;
       return;
     }
 
-    if (parseInt(totalGiven) < parseInt(amount)) {
+    if (totalGiven < totalBillAmount) {
        error.innerText = 'Amount Given Is very Low than Bill Amount!';
        return;
     }
 
     for (let i = 0; i < currencies.length; i++) {
       if (changeTo >= currencies[i]) {
-        let note = Math.floor(changeTo / currencies[i]);
-        changeTo = changeTo - currencies[i] * note;
-        notes[i] = note;
+        notes[i] = Math.floor(changeTo / currencies[i]);
+        changeTo = changeTo - currencies[i] * notes[i];
+        numNote[i].innerText = `${notes[i]}`
       }
     }
 
     console.log(notes)
-        for (let i = 0; i < notes.length; i++) {
-            if (notes[i]) {
-              console.log(`You have to pay ${notes[i]} notes of : ${currencies[i]}`)
-              numNote[i].innerText = `${notes[i]}`
-            }
-          }
-    
-    amontToPay.value = "";
-    amontYouGave.value = "";
-    totalGiven = "";
-    changeTo = "";
-    error.innerText = '';
+        // for (let i = 0; i < notes.length; i++) {
+
+        //     if (notes[i]) {
+        //       console.log(`You have to pay ${notes[i]} notes of : ${currencies[i]}`)
+        //       numNote[i].innerText = `${notes[i]}`
+        //     }
+
+        //   }
   }
    
   calculateBtn.addEventListener('click', change);
   
-
