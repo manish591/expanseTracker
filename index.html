@@ -13,11 +13,11 @@
             <h1 class="title">Cash Regiser Manager</h1>
             <p class="description">Enter the bill amount and cash given by the customer and know minimum number of notes to return.</p>
             <label for="amounttopay">Bill Amount</label>
-            <input id="amounttopay" type="text" class="amounttopay" placeholder="amount to pay">
+            <input id="amounttopay" type="number" class="amounttopay" placeholder="amount to pay" min="1">
              <button class="next">Next</button>
             <div class="hide">
             <label for="amountyougive">Cash Given</label>
-            <input id="amountyougive" type="text" class="amountyougive hide" placeholder="amount you given">
+            <input id="amountyougive" type="number" min="1" class="amountyougive hide" placeholder="amount you given">
             <button class="calculate">Calcuate</button>
         </div>
         <p class="error"></p>
