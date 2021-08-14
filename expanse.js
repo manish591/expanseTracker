@@ -47,6 +47,19 @@ function clearNote () {
     let changeTo = totalGiven - totalBillAmount;
     outputContainer.classList.remove('hide');
 
+
+    if (amontToPay.value === '') {
+      error.innerText = 'Please Enter A Value!';
+      outputContainer.classList.add('hide');
+      return;
+    }
+ 
+    if (Math.sign(Number(amontToPay.value)) === -1 || Number(amontToPay.value) === 0) {
+    error.innerText = 'Please enter a value 1 or more than 1!';
+    outputContainer.classList.add('hide');
+    return;
+    }
+
     if (amontYouGave.value === '') {
       error.innerText = 'Please Enter A Value!';
       outputContainer.classList.add('hide');
